@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row text-center">
+    <div class="col-md-4"><div class="card p-3">Total Reports<br><b>{{ total }}</b></div></div>
+    <div class="col-md-4"><div class="card p-3">Active<br><b>{{ active }}</b></div></div>
+    <div class="col-md-4"><div class="card p-3">Resolved<br><b>{{ resolved }}</b></div></div>
+</div>
+
+<h4 class="mt-4">Recent Reports</h4>
+<ul class="list-group">
+    {% for r in reports %}
+    <li class="list-group-item">
+        <b>{{ r.issue_type }}</b> – {{ r.description }}
+        <span class="badge bg-warning float-end">{{ r.status }}</span>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
