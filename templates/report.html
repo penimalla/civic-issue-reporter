@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Report an Issue</h3>
+
+<form method="POST" action="/submit" enctype="multipart/form-data" class="card p-4">
+    <label>Issue Type</label>
+    <select name="issue" class="form-control mb-3">
+        <option>Garbage Dumping</option>
+        <option>Wrong Parking</option>
+        <option>Public Spitting</option>
+        <option>Broken Streetlight</option>
+    </select>
+
+    <label>Upload Photo</label>
+    <input type="file" name="image" class="form-control mb-3" required>
+
+    <label>Description</label>
+    <input type="text" name="description" class="form-control mb-3">
+
+    <button class="btn btn-success">Submit Report</button>
+</form>
+{% endblock %}
